@@ -1,0 +1,72 @@
+{
+  "decks": [
+    {
+      "id": 1,
+      "name": "Rendering in React",
+      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. "
+    },
+    {
+      "name": "React Router",
+      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "front": "Differentiate between Real DOM and Virtual DOM.",
+      "back": "Virtual DOM updates are faster but do not directly update the HTML",
+      "deckId": 1
+    },
+    {
+      "name": "React Router",
+      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
+      "id": 2,
+      "cards": [
+        {
+          "front": "dasdasdsadasd",
+          "back": "adsadasadssa",
+          "id": 3,
+          "deckId": 2
+        },
+        {
+          "front": "New card data front",
+          "back": "Back card data description",
+          "id": 4,
+          "deckId": 2
+        },
+        {
+          "front": "What does <Switch> do?",
+          "back": "Renders the first matching child <Route> ",
+          "deckId": 2,
+          "id": 5
+        }
+      ]
+    },
+    {
+      "front": "",
+      "back": "",
+      "id": 3,
+      "deckId": 1
+    },
+    {
+      "front": "",
+      "back": "",
+      "id": 4,
+      "deckId": 1
+    },
+    {
+      "front": "What does <Switch> do?",
+      "back": "Renders the first matching child <Route> ",
+      "deckId": 2,
+      "id": 5
+    },
+    {
+      "cards": [],
+      "front": "b",
+      "back": "b",
+      "deckId": 1,
+      "id": 7
+    }
+  ]
+}
