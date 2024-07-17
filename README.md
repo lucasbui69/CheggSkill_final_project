@@ -1,4 +1,4 @@
-# Lucas Bui Final Project: Flashcard app
+# HUY BUI (Lucas) 's final project: Flashcard app
 
 ## Description
 This project is a ReactJS application that allows users to create a flashcard for study. User will be able to create 
