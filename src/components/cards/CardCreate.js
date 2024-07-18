@@ -32,9 +32,12 @@ export default function CardCreate() {
 
   return (
     <div className="container">
-      <BreadCrumb routename={routename} deckId={deckId} />
+      <BreadCrumb routename={routename} deck={deck} />
       {/* <h3>Add Card</h3> */}
-      <h3>{deck.name}: Add Card</h3>
+
+      <h3>{deck.name}: </h3>
+      <h3> Add Card</h3>
+
       {/* If Deck present then show the card input  */}
       <CardForm deckId={deckId} />
     </div>
