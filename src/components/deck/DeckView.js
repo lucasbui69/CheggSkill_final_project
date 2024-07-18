@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
-import { readDeck } from "../../utils/api";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
+import { deleteCard, readDeck, deleteDeck } from "../../utils/api";
 import CardView from "../cards/CardView";
 import BreadCrumb from "./DeckBreadcrumb";
 
@@ -8,6 +8,7 @@ export default function DeckView() {
   const { deckId } = useParams();
   const [deck, setDeck] = useState(null);
   const [cardList, setCardlist] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -35,7 +36,9 @@ export default function DeckView() {
 
   // Function to delete CardID
   const handleDeleteCard = (cardId) => {
-    return setCardlist(cardList.filter((card) => card.id !== cardId));
+    setCardlist(cardList.filter((card) => card.id !== cardId));
+    // Delete the card
+    deleteCard(cardId);
   };
 
   // Function to handle Delete a deck
@@ -44,8 +47,9 @@ export default function DeckView() {
       "Delete this deck?\n\nYou will not be able to recover it"
     );
     if (isConfirmed) {
-      // removeDeck(deckId)
-      console.log("Redirect to homepage");
+      deleteDeck(deckId);
+      navigate("");
+      // console.log("Redirect to homepage");
       window.location = "/";
     }
   };

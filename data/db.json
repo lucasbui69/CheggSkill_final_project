@@ -9,6 +9,11 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
+    },
+    {
+      "name": "Lucas desk",
+      "description": "New deck create",
+      "id": 3
     }
   ],
   "cards": [
@@ -19,54 +24,40 @@
       "deckId": 1
     },
     {
-      "name": "React Router",
-      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2,
-      "cards": [
-        {
-          "front": "dasdasdsadasd",
-          "back": "adsadasadssa",
-          "id": 3,
-          "deckId": 2
-        },
-        {
-          "front": "New card data front",
-          "back": "Back card data description",
-          "id": 4,
-          "deckId": 2
-        },
-        {
-          "front": "What does <Switch> do?",
-          "back": "Renders the first matching child <Route> ",
-          "deckId": 2,
-          "id": 5
-        }
-      ]
+      "front": "How do you modify the state of a different React component?",
+      "back": "Not at all! State is visible to the component only.",
+      "deckId": 1
     },
     {
-      "front": "",
-      "back": "",
       "id": 3,
+      "front": "How do you pass data 'down' to a React child component?",
+      "back": "As properties or props",
       "deckId": 1
     },
     {
-      "front": "",
-      "back": "",
-      "id": 4,
-      "deckId": 1
-    },
-    {
-      "front": "What does <Switch> do?",
-      "back": "Renders the first matching child <Route> ",
+      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
+      "back": "All paths. A route with no path matches all URL's",
       "deckId": 2,
-      "id": 5
+      "id": 4
     },
     {
-      "cards": [],
-      "front": "b",
-      "back": "b",
-      "deckId": 1,
-      "id": 7
+      "front": "New card front question 2",
+      "back": "Description on new card 3",
+      "id": 5,
+      "deckId": 1
+    },
+    {
+      "front": "Question 1 32131 ",
+      "back": "Answer for question 2 23 3",
+      "deckId": 3,
+      "id": 6
+    },
+    {
+      "front": "Cards 3 question ",
+      "back": "Answer question 3",
+      "deckId": 3,
+      "id": 8
     }
   ]
 }

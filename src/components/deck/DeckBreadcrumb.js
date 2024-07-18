@@ -1,23 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function BreadCrumb({
-  routename,
-  deckId = null,
-  deckName = null,
-}) {
+export default function BreadCrumb({ routename, deck = null }) {
   return (
     <div className="breadcrumb">
       <NavLink to="/" className="ml-1 mr-1">
         {" "}
         <i className="bi bi-house-door-fill"></i> Home
       </NavLink>
-      {deckName ? (
+      {deck && deck.name ? (
         <div>
           /
           <NavLink to={`/`} className="ml-1 mr-1">
             {" "}
-            {deckName}
+            {deck.name}
           </NavLink>
         </div>
       ) : null}

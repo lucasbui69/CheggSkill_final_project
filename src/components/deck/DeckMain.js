@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import DeckList from "./DeckList";
-import { listDecks } from "../../utils/api";
+import { deleteDeck, listDecks } from "../../utils/api";
 
 export default function DeckMain() {
   const [decks, setDecks] = useState([]);
-
   //   Create to pull data from data.json
   useEffect(() => {
     const abortController = new AbortController();
@@ -32,6 +31,7 @@ export default function DeckMain() {
     );
     if (confirmed) {
       setDecks(decks.filter((deck) => deck.id !== id));
+      deleteDeck(id);
     }
   };
 

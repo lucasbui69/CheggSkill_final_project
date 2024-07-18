@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { readDeck } from "../../utils/api";
 import CardList from "../cards/CardList";
 import BreadCrumb from "./DeckBreadcrumb";
@@ -35,11 +35,11 @@ const DeckStudy = () => {
   return (
     <div>
       {/* BreadCrum link */}
-      <BreadCrumb routename={routename} deckId={deck.id} deckName={deck.name} />
+      <BreadCrumb routename={routename} deck={deck} />
 
       {/* Study Deck content */}
       <h2>Study: {deck.name}</h2>
-      {deck.cards ? <CardList cards={deck.cards} /> : null}
+      {deck.cards ? <CardList deckId={deck.id} cards={deck.cards} /> : null}
     </div>
   );
 };

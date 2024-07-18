@@ -48,7 +48,7 @@ export default function DeckEdit() {
   };
   return (
     <div className="container">
-      <BreadCrumb routename={routename} deckId={deckId} deckName={deck.name} />
+      <BreadCrumb routename={routename} deck={deck} />
       <h1>Edit Deck</h1>
       <form>
         <div className="mb-3">

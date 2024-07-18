@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
-export default function CardList({ cards }) {
+export default function CardList({ deckId, cards }) {
   const [flipped, setFlipped] = useState(false);
   const [cardIndex, setCardIndex] = useState(0);
+  let navigate = useNavigate();
 
   // Function to handle when user flip the card
   const handleFlipped = (e) => {
@@ -14,7 +15,7 @@ export default function CardList({ cards }) {
 
   // Function to move to the next Card ID
   const handleNextCard = () => {
-    if (cardIndex === cards.length - 2) {
+    if (cardIndex === cards.length - 1) {
       const isRestart = window.confirm(
         "Restart cards ?\n\nClick `cancel` to return to the home page."
       );
@@ -22,6 +23,9 @@ export default function CardList({ cards }) {
       if (isRestart) {
         setCardIndex(0);
         setFlipped(!flipped);
+      } else {
+        console.log("Go to home page");
+        navigate("/");
       }
     } else {
       setCardIndex((prevIndex) => prevIndex + 1);
@@ -29,8 +33,10 @@ export default function CardList({ cards }) {
     }
   };
 
+  // Function to create new card from existing deck
+
   // Set current card
-  console.log(cards.length);
+  // console.log(cards.length);
   let currentCard = null;
   if (cards.length > 2) {
     currentCard = cards[cardIndex];
@@ -74,7 +80,9 @@ export default function CardList({ cards }) {
             You need at least 3 cards to study. There are {cards.length} cards
             in this deck.
           </p>
-          <NavLink to="/cards/new" className="btn btn-primary">
+          <NavLink
+            to={`/decks/${deckId}/cards/new`}
+            className="btn btn-primary">
             <i className="bi bi-plus-square-fill"></i> Add Cards
           </NavLink>
         </div>
